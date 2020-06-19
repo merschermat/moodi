@@ -7,31 +7,31 @@ export default function Home() {
         <title>Moodi</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <Header /> 
+      <Header />
       <main>
         <h1 className="title">
           Welcome to <a>Moodi.js!</a>
         </h1>
 
         <p className="description">
-          Get started by creating an account
+          Get started by <a href='/create'><b>creating an account</b></a>
         </p>
         <p className="description">
           or just go to the <b>diagraming tool</b>
         </p>
 
         <div className="grid">
-          <a href="" className="card">
+          <a target='blank' href="" className="card">
             <h3>Documentation &rarr;</h3>
             <p>See a dead simple description of moodi usages.</p>
           </a>
 
-          <a href="https://github.com/merschermat/moodi" className="card">
+          <a target='blank' href="https://github.com/merschermat/moodi" className="card">
             <h3>GitHub &rarr;</h3>
             <p>See the source code, moodi is a open source project ;)</p>
           </a>
 
-          <a
+          <a  target='blank'
             href=""
             className="card"
           >
@@ -39,7 +39,7 @@ export default function Home() {
             <p>Discover templates for commum MongoDB usage.</p>
           </a>
 
-          <a
+          <a  target='blank'
             href=""
             className="card"
           >
@@ -50,17 +50,6 @@ export default function Home() {
           </a>
         </div>
       </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-        </a>
-      </footer>
-
       <style jsx>{`
         .container {
           min-height: 100vh;
