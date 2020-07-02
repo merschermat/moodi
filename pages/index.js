@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Header from '../components/header'
 export default function Home() {
   return (
     <div className="container">
@@ -7,7 +6,6 @@ export default function Home() {
         <title>Moodi</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <Header />
       <main>
         <h1 className="title">
           Welcome to <a>Moodi.js!</a>
@@ -17,7 +15,7 @@ export default function Home() {
           Get started by <a href='/create'><b>creating an account</b></a>
         </p>
         <p className="description">
-          or just go to the <b>diagraming tool</b>
+          or just go to the <a href='/diagrams'><b>diagraming tool</b></a>
         </p>
 
         <div className="grid">
