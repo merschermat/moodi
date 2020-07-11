@@ -65,6 +65,7 @@ export default function Header() {
           display:flex;
           justify-content:flex-end;
           align-items:center;
+          margin-right:30px
         }
         .login-container input{
           outline:none;

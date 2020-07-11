@@ -4,12 +4,12 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import Header from '../components/header'
 
 function MyApp({ Component, pageProps }) {
-  return <>
+  return <main>
     <Header />
     <DndProvider backend={HTML5Backend}>
       <Component {...pageProps} />
     </DndProvider>
-  </>
+  </main>
 }
 
 // Only uncomment this method if you have blocking data requirements for

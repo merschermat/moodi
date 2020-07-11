@@ -1,4 +1,5 @@
 import Head from 'next/head'
+
 export default function Home() {
   return (
     <div className="container">
@@ -29,7 +30,7 @@ export default function Home() {
             <p>See the source code, moodi is a open source project ;)</p>
           </a>
 
-          <a  target='blank'
+          <a target='blank'
             href=""
             className="card"
           >
@@ -37,7 +38,7 @@ export default function Home() {
             <p>Discover templates for commum MongoDB usage.</p>
           </a>
 
-          <a  target='blank'
+          <a target='blank'
             href=""
             className="card"
           >
@@ -190,7 +191,7 @@ export default function Home() {
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
         }
-
+        
         * {
           box-sizing: border-box;
         }
