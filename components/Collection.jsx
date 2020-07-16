@@ -17,8 +17,8 @@ const types = [
     'Schema',
 ]
 const Collection = ({ leftProp, topProp, getAtrribute }) => {
-    const [left, setleft] = useState(10)
-    const [top, settop] = useState(10)
+    const [left, setleft] = useState(leftProp)
+    const [top, settop] = useState(topProp)
     const [edit, setedit] = useState(false)
     const [selectedtype, setselectedtype] = useState('String')
     const [inputValue, setinputValue] = useState('')
@@ -56,26 +56,27 @@ const Collection = ({ leftProp, topProp, getAtrribute }) => {
             ref={drag}
             style={{
                 opacity: isDragging ? 0.5 : 1,
-                fontWeight: 'bold',
                 position: "absolute",
                 cursor: 'move',
                 top: `${top}px`,
                 left: `${left}px`,
-                background:'white'
+                background: 'rgba(232, 255, 222,0.4)'
 
             }}
         >
             {/* addAttribute('test', 'string') } */}
             <div onDoubleClick={(e) => { e.stopPropagation(); setedit(true) }}>
-                <input type="text" value={name} onChange={(e) => setname(e.target.value)} />
-                {edit && <div><input type="text" value={inputValue} onChange={(e) => setinputValue(e.target.value)} />:
+                <div id="titleCollection">
+                    <input type="text" placeholder={"Collection name"} value={name} onChange={(e) => setname(e.target.value)} />
+                </div>
+                {edit && <div><input type="text" placeholder="Attribute" value={inputValue} onChange={(e) => setinputValue(e.target.value)} />:
                 <select name="types" id="types" value={selectedtype} onChange={handleChange}>
                         {types.map(e => (<option value={e}>{e}</option>))}
                     </select>
-                    <a onClick={(e) => { addAttribute(inputValue, selectedtype); setedit(false) }}>v</a> <a onClick={() => setedit(false)}>x</a> </div>}
+                    <a id="insert" onClick={(e) => { addAttribute(inputValue, selectedtype); setedit(false) }}>&#10003;</a> <a id="cancel" onClick={() => setedit(false)}>&#88;</a> </div>}
                 {attributes == null ? <div>
                     double click
-                    to add stuff
+                    to add
                 </div> :
                     Object.keys(attributes).map(a => (<div>{a}:{attributes[a]}</div>
                     ))}

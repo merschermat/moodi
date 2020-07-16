@@ -4,16 +4,43 @@ body {
     overflow-x: hidden;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
         Helvetica Neue, sans-serif;
-        
 }
 .collection {
-    border: 2px solid;
-    padding: 5px;
+    border: 1px solid;
+    padding: 10px;
     border-radius: 10px;
     font-size: 18px;
+    font-weight: 400;
     color: rgb(107, 119, 140);
-
-    input {
+    input,
+    select {
+        background-color: rgba(232, 255, 222,0.4);
         max-width: 100px;
+        border: none;
+        border-bottom: 1px solid;
+        margin-bottom: 5px;
+        outline: none;
+    }
+    #insert {
+        color: #13aa52;
+    }
+    #cancel {
+        color: red;
+    }
+    a {
+        cursor: pointer;
+        margin: 2.5px;
+    }
+    #titleCollection {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input {
+            width: 100%;
+            max-width: unset;
+            font-size: 18px;
+            text-align: center;
+        }
     }
 }

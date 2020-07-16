@@ -2,9 +2,14 @@ import App from 'next/app'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import Header from '../components/header'
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }) {
   return <main>
+    <Head>
+      <title>Moodi</title>
+      <link rel="icon" href="/favicon.svg" />
+    </Head>
     <Header />
     <DndProvider backend={HTML5Backend}>
       <Component {...pageProps} />

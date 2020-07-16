@@ -1,13 +1,9 @@
 import React, { useRef, useState, } from 'react'
-// import { useDrag, useDrop } from 'react-dnd'
-// import { DndProvider, useDrag, useDrop, DragDropContext as dragDropContext } from 'react-dnd-cjs'
-// // import { HTML5Backend } from 'react-dnd-html5-backend-cjs'
-// import { default as TouchBackend } from "react-dnd-html5-backend-cjs";
-
 import Collection from '../../components/Collection'
 import { useDrop } from 'react-dnd'
 import api from '../../services/api'
 var fileDownload = require('js-file-download');
+import './Diagrams.scss'
 
 
 export default ({ isDragging, text }) => {
@@ -50,7 +46,7 @@ export default ({ isDragging, text }) => {
             "colections": Object.keys(atrributes).map(e => ({ name: e, atributes: atrributes[e] }))
 
         }, { responseType: 'arraybuffer' }).then(response => {
-            fileDownload(response.data, 'filename.zip');
+            fileDownload(response.data, 'models.zip');
 
         })
     }
@@ -59,10 +55,10 @@ export default ({ isDragging, text }) => {
             <div id="drop-canvas" ref={drop} onDoubleClick={(e) => {
                 addCollection(e.screenX, e.screenY)
                 setCount(collections.length + 1)
-            }} style={{ position: 'relative', width: '100vw', height: '100vh', background:'rgba(232, 255, 222,0.4)' }} >
-                <button onClick={(e) => { e.stopPropagation(); exportDiagram() }}>Export</button>
+            }} style={{ position: 'relative', width: '100vw', height: '100vh', background:'white' }} >
+                <button id="export" onClick={(e) => { e.stopPropagation(); exportDiagram() }}>Export</button>
                 {collections.map(c => {
-                    return <Collection left={c.left} top={c.top} getAtrribute={addAttribute} />
+                    return <Collection leftProp={c.left} topProp={c.top} getAtrribute={addAttribute} />
                 })}
             </div>
 
